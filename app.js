@@ -64,7 +64,7 @@ app.get('/getallmovies', (req, res) => {
 });
 
 //localhost:5000/deletemovie?title=MovieTitle
-app.get('/deletemovie', (req, res) => {
+app.post('/deletemovie', (req, res) => {
   Movie.deleteMany({ title: req.query.title })
     .then(response => {
       res.status(200).json(response);
